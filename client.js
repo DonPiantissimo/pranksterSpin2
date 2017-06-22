@@ -5,8 +5,8 @@
  */
 
 var socket = io.connect();
+	$('#messages').append($('<li>').text("AAAAAAAAAAAAAAAAA"));
 	var myUser=-1;
-	document.getElementById("winnerBoard").innerHTML = 'AAAAAAAAAAAAA';
 	$('form').submit(function(){
 	socket.emit('spin', $('#m').val());
 	$('#m').val('');
