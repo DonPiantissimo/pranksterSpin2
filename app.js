@@ -39,13 +39,13 @@ sio.sockets.on('connection', function (client) {
     	client.on('spin', function(msg){
             console.log('spin');
 		data.lv = parseInt(msg);
-                if (data.lv<1 || data.lv>19)
-                    mes = "error";
-                else {
+                if (data.lv>0 && data.lv<20) {
                     mes=app_server.onMessage(data);
                     console.log('emitting '+mes);
-                    sio.emit('result', mes);
                 }
+		else 
+                    mes = "error";
+		sio.emit('result', mes);
 	});
     
     client.on('disconnect', function () {
