@@ -51,7 +51,7 @@ sio.sockets.on('connection', function (client) {
     client.on('disconnect', function () {
 
         //notify of disconnection
-        console.log('\t socket.io:: client disconnected ' + client.userid + ' ' + client.game_id);
+        console.log('\t socket.io:: client disconnected ');
 
 
 
