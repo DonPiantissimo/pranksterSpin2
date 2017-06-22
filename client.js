@@ -26,4 +26,4 @@ document.onmousedown = function () {
 	document.getElementById("winnerBoard").innerHTML = 'BLAAAAAAH';
 	socket.emit('spin',"10");
     };
-socket.on('result', function(msg){document.getElementById("winnerBoard").innerHTML = 'Waiting for players...';});
+socket.on('result', function(msg){document.getElementById("winnerBoard").innerHTML = msg;});
