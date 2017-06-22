@@ -7,6 +7,10 @@
 var socket = io.connect();
 	$('#messages').append($('<li>').text("AAAAAAAAAAAAAAAAA"));
 	var myUser=-1;
+	socket.on('connected', function(user){
+	$('#messages').append($('<li>').text("AAAAAAAAAAAAAAAAA"));
+	if (myUser==-1) myUser=user;
+	});
 	$('form').submit(function(){
 	socket.emit('spin', $('#m').val());
 	$('#m').val('');
