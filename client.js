@@ -4,11 +4,9 @@
  * and open the template in the editor.
  */
 
-var socket = io();
+var socket = io.connect();
 	var myUser=-1;
-	socket.on('connected', function(user){
-	if (myUser==-1) myUser=user;
-	});
+	
 	$('form').submit(function(){
 	socket.emit('spin', $('#m').val());
 	//$('#m').val('');
