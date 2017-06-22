@@ -9,7 +9,7 @@ var socket = io.connect();
 	
 	$('form').submit(function(){
 	socket.emit('spin', $('#m').val());
-	//$('#m').val('');
+	$('#m').val('');
 	return false;
 	});
 	socket.on('result', function(msg){
