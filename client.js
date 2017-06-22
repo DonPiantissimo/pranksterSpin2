@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/*
 var socket = io.connect();
 	$('#messages').append($('<li>').text("AAAAAAAAAAAAAAAAA"));
 	var myUser=-1;
@@ -19,3 +19,10 @@ var socket = io.connect();
 	socket.on('result', function(msg){
 	$('#messages').append($('<li>').text(msg));
 	});
+
+*/
+var socket = io.connect();
+document.onmousedown = function () {
+	socket.emit('spin',"10");
+    };
+socket.on('result', function(msg){document.getElementById("winnerBoard").innerHTML = 'Waiting for players...';});
